@@ -164,7 +164,6 @@ for i, (seismic_datas, vmodels, edges, vmodel_max_min) in enumerate(test_loader)
             plot_velocity(total, pd_N, gt_N, test_result_dir, vmin, vmax)  # Show two graphs
             plot_ground_truth(total, gt_N, test_result_dir, vmin, vmax)  # Show ground truth image
             plot_prediction(total, pd_N, test_result_dir, vmin, vmax)  # Show prediction image
-            plot_velocity_image(total, pd_N, gt_N, test_result_dir, vmin, vmax)  # Show velocity image
 
         # if total in range(1, 101, 1):
         #     plot_seg_velocity_compare(total, pd, gt, test_result_dir, vmin, vmax)
