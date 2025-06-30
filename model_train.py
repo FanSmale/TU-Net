@@ -154,7 +154,7 @@ def validate():
     total_loss = 0
     net.eval()
     with torch.no_grad():
-        for i, (seismic_datas, velocity_models, edges) in enumerate(train_loader):
+        for i, (seismic_datas, velocity_models, edges, vmodel_max_min) in enumerate(val_loader):
             seismic_datas = seismic_datas[0].to(device)
             velocity_models = velocity_models[0].to(device).to(torch.float32)
             edges = edges[0].to(device).to(torch.float32)
@@ -180,7 +180,7 @@ def validate():
 
             total_loss += loss.item()
 
-        avg_loss = total_loss / len(train_loader)
+        avg_loss = total_loss / len(val_loader)
         return avg_loss
 
 
