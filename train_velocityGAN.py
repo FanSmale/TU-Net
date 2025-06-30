@@ -87,7 +87,7 @@ def train():
     net_d.train()
 
     iter_g = 0
-    for i, (seismic_datas, vmodels, edge) in enumerate(train_loader):
+    for i, (seismic_datas, vmodels, edges) in enumerate(train_loader):
 
         seismic_datas = seismic_datas[0].to(device)
         vmodels = vmodels[0].to(device)
